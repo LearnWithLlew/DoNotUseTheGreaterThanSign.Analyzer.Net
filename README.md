@@ -1,6 +1,6 @@
 # DoNotUseTheGreaterThanSign.Analyzer.Net
 
-<img src="./icon.png" alt="DoNotUseTheGreaterThanSign icon" width="128" height="128">
+![icon](./icon.png)
 
 [![build](https://github.com/LearnWithLlew/DoNotUseTheGreaterThanSign.Analyzer.Net/actions/workflows/build.yml/badge.svg)](https://github.com/LearnWithLlew/DoNotUseTheGreaterThanSign.Analyzer.Net/actions/workflows/build.yml)
 [![NuGet](https://img.shields.io/nuget/v/DoNotUseTheGreaterThanSign.Analyzer.Net.svg)](https://www.nuget.org/packages/DoNotUseTheGreaterThanSign.Analyzer.Net)
