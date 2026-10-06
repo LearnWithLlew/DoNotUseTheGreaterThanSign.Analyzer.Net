@@ -12,6 +12,18 @@ should become
 2 < x && x < 5
 
 
+# Decisions
+
+1. Rule ID: `LessThanOnly` (message: `Use '<' instead of '>'`).
+1. Default severity: warning. Users can raise it to error in `.editorconfig`.
+1. Flagged operators: only the comparison operators `>` and `>=`. Ignored: `>>`, `>>=`, `=>`, and generic angle brackets.
+1. Fix: `a > b` becomes `b < a`, and `a >= b` becomes `b <= a`.
+1. Reordering: only for an `&&` chain where every clause compares the same variable against a constant (as in the example above). Clauses are ordered by constant, smallest first.
+1. Anything else is only flipped and keeps its original order, because reordering can change short-circuit behavior and side effects.
+1. Target framework: `netstandard2.0` (required for Roslyn analyzers).
+1. Package ID: `DoNotUseTheGreaterThanSign.Analyzer.Net`.
+
+
 # Project Structure
 
 Scripts: build_and_test.sh
@@ -19,4 +31,4 @@ Unit tests: use xunit
 CI: Github actions
     build and test (uses the script) on push
     publish, on github deploy, version from tag (example tag: v1.2.3)
-Nuget: publishes the 
+Nuget: publishes the analyzer package to nuget.org on GitHub release, with the version taken from the tag (v1.2.3 becomes 1.2.3). Uses the `NUGET_API_KEY` repo secret.

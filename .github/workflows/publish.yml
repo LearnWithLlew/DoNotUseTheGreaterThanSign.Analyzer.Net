@@ -1,0 +1,19 @@
+name: publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: ./build_and_test.sh
+      - name: Pack (version from tag, v1.2.3 -> 1.2.3)
+        run: dotnet pack src/DoNotUseTheGreaterThanSign.Analyzer.Net --configuration Release --no-build -p:Version="${GITHUB_REF_NAME#v}" --output nupkgs
+      - name: Push to nuget.org
+        run: dotnet nuget push "nupkgs/*.nupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json
