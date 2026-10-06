@@ -31,4 +31,4 @@ Unit tests: use xunit
 CI: Github actions
     build and test (uses the script) on push
     publish, on github deploy, version from tag (example tag: v1.2.3)
-Nuget: publishes the analyzer package to nuget.org on GitHub release, with the version taken from the tag (v1.2.3 becomes 1.2.3). Uses the `NUGET_API_KEY` repo secret.
+Nuget: publishes the analyzer package to nuget.org on GitHub release, with the version taken from the tag (v1.2.3 becomes 1.2.3). Uses nuget.org trusted publishing (OIDC, no long-lived API key): the `publish.yml` job has `id-token: write`, and `NuGet/login@v1` exchanges the GitHub token for a short-lived key using the `NUGET_USER` repo secret (the nuget.org profile name, not the email). The trusted publishing policy on nuget.org must name `publish.yml` as the workflow file.
