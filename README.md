@@ -1,5 +1,8 @@
 # DoNotUseTheGreaterThanSign.Analyzer.Net
 
+[![build](https://github.com/LearnWithLlew/DoNotUseTheGreaterThanSign.Analyzer.Net/actions/workflows/build.yml/badge.svg)](https://github.com/LearnWithLlew/DoNotUseTheGreaterThanSign.Analyzer.Net/actions/workflows/build.yml)
+[![NuGet](https://img.shields.io/nuget/v/DoNotUseTheGreaterThanSign.Analyzer.Net.svg)](https://www.nuget.org/packages/DoNotUseTheGreaterThanSign.Analyzer.Net)
+
 A Roslyn analyzer that flags `>` and `>=` (rule `LessThanOnly`, warning by default) and a code fix that rewrites them as `<` and `<=` by swapping the operands.
 
 ```csharp
