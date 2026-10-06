@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
   <title>Do not use the greater than sign</title>
   <rect width="256" height="256" rx="48" fill="#1f2430"/>
-  <!-- banned: greater-than sign with a slash through it -->
-  <polyline points="48,64 100,108 48,152" fill="none" stroke="#8b93a7" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="88" y1="44" x2="62" y2="172" stroke="#ff5a5f" stroke-width="12" stroke-linecap="round"/>
-  <!-- replacement: less-than sign -->
-  <polyline points="208,64 156,108 208,152" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- fix: curved arrow from the banned sign to its replacement -->
-  <path d="M76 190 Q128 236 157 208" fill="none" stroke="#f5a623" stroke-width="12" stroke-linecap="round"/>
-  <polygon points="176,190 166,216 148,196" fill="#f5a623" stroke="#f5a623" stroke-width="4" stroke-linejoin="round"/>
+  <!-- banned: small greater-than sign with a slash through it -->
+  <polyline points="34,98 66,128 34,158" fill="none" stroke="#8b93a7" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="60" y1="80" x2="42" y2="176" stroke="#ff5a5f" stroke-width="9" stroke-linecap="round"/>
+  <!-- fix: arrow to the replacement -->
+  <line x1="84" y1="128" x2="110" y2="128" stroke="#c5cad6" stroke-width="10" stroke-linecap="round"/>
+  <polyline points="100,114 114,128 100,142" fill="none" stroke="#c5cad6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- replacement: large less-than sign -->
+  <polyline points="222,54 144,128 222,202" fill="none" stroke="#ffffff" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
